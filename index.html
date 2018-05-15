@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <title>Page Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<!-- <script src=".././moment.min.js"></script> -->
+<!-- <script src="./lib.js"></script> -->
+<!-- <script type="module">
+    import {addTextToBody} from './lib.js'; addTextToBody('Modules are pretty cool.');
+</script>
+<script src="./index.js"></script> -->
+
+<script>
+    function myPromise0() {
+        return new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                return resolve('My regards zero ms')
+            }, 0);
+        })
+    }
+
+    function myPromise1() {
+        return new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                return reject('My regards one sec')
+            }, 1000);
+        })
+    }
+
+    function myPromise3() {
+        return new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                return resolve('My regards three sec')
+            }, 3000);
+        })
+    }
+
+    function myPromise2() {
+        return new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                return resolve('My regards two sec')
+            }, 2000);
+        })
+    }
+
+
+    function syncFuntionAgain() {
+        for (let x = 10; x < 3000; x++) {
+
+            console.log(x);
+        }
+    }
+
+    async function test() {
+
+
+
+        myPromise().then((result) => {
+
+            console.log('again my myPromise2 1');
+        });
+
+        const result = await myPromise();
+
+        console.log("result ==>" + result)
+
+
+
+
+
+    }
+    console.log('one')
+
+    myPromise0()
+        .then((result) => {
+            console.log(result);
+            return 'level 1'
+        })
+        .then((result) => {
+            myPromise0()
+                .then((result) => {
+                    console.log(result);
+                    myPromise0()
+                        .then((result) => {
+                            console.log(result);
+                            myPromise0()
+                                .then((result) => {
+                                    console.log(result);
+                                    myPromise0()
+                                        .then((result) => {
+                                            console.log(result);
+                                            return 'level 1'
+                                        })
+                                })
+                        })
+                })
+            return 'level 2'
+        }).then((result) => {
+            console.log(result);
+            return 'level 3'
+        }).then((result) => {
+            console.log(result);
+            return 'level 4'
+        }).then((result) => {
+            console.log(result);
+            return 'level 5'
+        })
+        .catch((error) => {
+
+        });
+
+
+
+    async function some() {
+        const one = await myPromise0();
+        const one = await myPromise0();
+        const one = await myPromise0();
+        const one = await myPromise0();
+        const one = await myPromise0();
+        const one = await myPromise0();
+
+    }
+
+
+    console.log('two')
+    console.log('three');
+</script>
+
+<body>
+    <select id="mySelect" multiple size="4">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+
+</body>
+
+</html>
